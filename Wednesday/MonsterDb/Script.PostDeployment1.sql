@@ -9,59 +9,16 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]                    
 --------------------------------------------------------------------------------------
 */
-create schema Monster;
-    go
 
-    create table Monster.Monster
- (
- MonsterId  int not null identity(1,1),
- GenderId int null,
- TitleId int null, 
- TypeId int not null,
- Name nvarchar(250) not null,
- PicturePath nvarchar(256) null,
- Active bit not null
- );
-go 
-
-create table Monster.MonsterType
-(
-    MonsterTypeId int not null identity (1,1) primary key,
-    TypeName nvarchar(250) not null,
-    Active bit not null
-    );
+use MonsterDb;
 go
 
-    Create table Monster.Gender
-    (
-    GenderId int not null identity (1,1) primary key,
-    GenderName nvarchar(250) not null,
-    Active bit not null
-    );
-go
 
-    create table Monster.Title
-    (
-    TitleId int not null identity(1,1) primary key,
-    TitleName nvarchar(250) not null,
-    Active bit not null 
-    );
-    go
-    
+insert into Monster.Gender(GenderName, Active)
+values (N'Female', 1) , (N'Male', 1), (N'Alien', 1);
 
-    alter table Monster.Monster
-        add constraint pk_monster_monsterid primary key clustered(MonsterId);
-go
+insert into Monster.MonsterType(TypeName, Active)
+values (N'Vampire', 1) , (N'Werewolf', 1), (N'Zombie', 1);
 
-    alter table Monster.Monster
-        add constraint fk_monster_genderid foreign key (GenderId) references Monster.Gender (GenderId);
-go
-
-    alter table Monster.Monster
-        add constraint fk_monster_titleid foreign key (TitleId) references Monster.Title (TitleId);
-   go
-
-    alter table Monster.Monster
-        add constraint fk_monster_typeid foreign key (TypeId) references Monster.MonsterType (MonsterTypeId);
-
-go
+insert into Monster.Title(TitleName, Active)
+values (N'Sir', 1) , (N'Lady', 1), (N'Count', 1);

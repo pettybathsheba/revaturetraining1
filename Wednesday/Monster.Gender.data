@@ -1,0 +1,6 @@
+﻿SET IDENTITY_INSERT [Monster].[Gender] ON
+INSERT INTO [Monster].[Gender] ([GenderId], [GenderName], [Active]) VALUES (1, N'Female', 1)
+INSERT INTO [Monster].[Gender] ([GenderId], [GenderName], [Active]) VALUES (2, N'Male', 1)
+INSERT INTO [Monster].[Gender] ([GenderId], [GenderName], [Active]) VALUES (3, N'Alien', 1)
+
+SET IDENTITY_INSERT [Monster].[Gender] OFF

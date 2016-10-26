@@ -9,11 +9,11 @@
                SELECT * FROM [$(TableName)]                    
 --------------------------------------------------------------------------------------
 */
-use master;
-go 
+--use master;
+--go 
 
-create database MonsterDB;
-go
+--create database MonsterDB;
+--go
 
-use MonsterDB;
-go
+--use MonsterDB;
+--go
