@@ -1,9 +1,16 @@
-﻿ 
- -- use MonsterDB;
- --   go 
- 
- --create schema Monster;
- --   go
+﻿/*
+Post-Deployment Script Template                            
+--------------------------------------------------------------------------------------
+ This file contains SQL statements that will be appended to the build script.        
+ Use SQLCMD syntax to include a file in the post-deployment script.            
+ Example:      :r .\myfile.sql                                
+ Use SQLCMD syntax to reference a variable in the post-deployment script.        
+ Example:      :setvar TableName MyTable                            
+               SELECT * FROM [$(TableName)]                    
+--------------------------------------------------------------------------------------
+*/
+create schema Monster;
+    go
 
     create table Monster.Monster
  (
@@ -15,7 +22,7 @@
  PicturePath nvarchar(256) null,
  Active bit not null
  );
- go
+go 
 
 create table Monster.MonsterType
 (
@@ -23,7 +30,7 @@ create table Monster.MonsterType
     TypeName nvarchar(250) not null,
     Active bit not null
     );
-    go
+go
 
     Create table Monster.Gender
     (
@@ -31,7 +38,7 @@ create table Monster.MonsterType
     GenderName nvarchar(250) not null,
     Active bit not null
     );
-    go
+go
 
     create table Monster.Title
     (
@@ -48,11 +55,12 @@ go
 
     alter table Monster.Monster
         add constraint fk_monster_genderid foreign key (GenderId) references Monster.Gender (GenderId);
-    go
+go
 
     alter table Monster.Monster
         add constraint fk_monster_titleid foreign key (TitleId) references Monster.Title (TitleId);
    go
+
     alter table Monster.Monster
         add constraint fk_monster_typeid foreign key (TypeId) references Monster.MonsterType (MonsterTypeId);
 
