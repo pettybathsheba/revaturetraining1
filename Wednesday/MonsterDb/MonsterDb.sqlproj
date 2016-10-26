@@ -67,4 +67,8 @@
   <ItemGroup>
     <Build Include="Script1.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="MonsterDb.publish.xml" />
+    <None Include="MonsterDb123.publish.publish.xml" />
+  </ItemGroup>
 </Project>
