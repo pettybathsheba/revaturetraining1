@@ -10,9 +10,6 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-use MonsterDb;
-go
-
 
 insert into Monster.Gender(GenderName, Active)
 values (N'Female', 1) , (N'Male', 1), (N'Alien', 1);
