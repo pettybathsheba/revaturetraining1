@@ -1,0 +1,14 @@
+ public bool SearchLastGender(Gender gender)
+        {
+            var query = "select * Monster.Gender  where GenderId = max(GenderId";
+            
+            using (var connection = new SqlConnection(connectionstring))
+            {
+
+                var cmd = new SqlCommand(query, connection);
+                connection.Open();
+                cmd.Parameters.AddRange(new SqlParameter[] { name, active, id });
+
+                result = cmd.ExecuteNonQuery();
+
+           }

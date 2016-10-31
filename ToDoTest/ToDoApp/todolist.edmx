@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ToDoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ToDo">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TaskToDo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Complete" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ToDo.dbo.ShowAll' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ShowAll">
+          <Key>
+            <PropertyRef Name="TaskToDo" />
+            <PropertyRef Name="Complete" />
+          </Key>
+          <Property Name="TaskToDo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Complete" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ToDo.dbo.ShowComplete' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ShowComplete">
+          <Key>
+            <PropertyRef Name="TaskToDo" />
+            <PropertyRef Name="Complete" />
+          </Key>
+          <Property Name="TaskToDo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Complete" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ToDo.dbo.ShowIncomplete' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ShowIncomplete">
+          <Key>
+            <PropertyRef Name="TaskToDo" />
+            <PropertyRef Name="Complete" />
+          </Key>
+          <Property Name="TaskToDo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Complete" Type="bit" Nullable="false" />
+        </EntityType>
+        <Function Name="RemoveItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="ToDoModelStoreContainer">
+          <EntitySet Name="ToDo" EntityType="Self.ToDo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShowAll" EntityType="Self.ShowAll" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ShowAll].[TaskToDo] AS [TaskToDo], 
+    [ShowAll].[Complete] AS [Complete]
+    FROM [dbo].[ShowAll] AS [ShowAll]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ShowComplete" EntityType="Self.ShowComplete" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ShowComplete].[TaskToDo] AS [TaskToDo], 
+    [ShowComplete].[Complete] AS [Complete]
+    FROM [dbo].[ShowComplete] AS [ShowComplete]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ShowIncomplete" EntityType="Self.ShowIncomplete" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ShowIncomplete].[TaskToDo] AS [TaskToDo], 
+    [ShowIncomplete].[Complete] AS [Complete]
+    FROM [dbo].[ShowIncomplete] AS [ShowIncomplete]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ToDoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ToDo">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaskToDo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Complete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShowAll">
+          <Key>
+            <PropertyRef Name="TaskToDo" />
+            <PropertyRef Name="Complete" />
+          </Key>
+          <Property Name="TaskToDo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Complete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShowComplete">
+          <Key>
+            <PropertyRef Name="TaskToDo" />
+            <PropertyRef Name="Complete" />
+          </Key>
+          <Property Name="TaskToDo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Complete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShowIncomplete">
+          <Key>
+            <PropertyRef Name="TaskToDo" />
+            <PropertyRef Name="Complete" />
+          </Key>
+          <Property Name="TaskToDo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Complete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ToDoEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ToDoes" EntityType="Self.ToDo" />
+          <EntitySet Name="ShowAlls" EntityType="Self.ShowAll" />
+          <EntitySet Name="ShowCompletes" EntityType="Self.ShowComplete" />
+          <EntitySet Name="ShowIncompletes" EntityType="Self.ShowIncomplete" />
+          <FunctionImport Name="RemoveItem" />
+          <FunctionImport Name="UpdateItem" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ToDoModelStoreContainer" CdmEntityContainer="ToDoEntities3">
+          <EntitySetMapping Name="ToDoes">
+            <EntityTypeMapping TypeName="ToDoModel.ToDo">
+              <MappingFragment StoreEntitySet="ToDo">
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="TaskToDo" ColumnName="TaskToDo" />
+                <ScalarProperty Name="Complete" ColumnName="Complete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShowAlls">
+            <EntityTypeMapping TypeName="ToDoModel.ShowAll">
+              <MappingFragment StoreEntitySet="ShowAll">
+                <ScalarProperty Name="TaskToDo" ColumnName="TaskToDo" />
+                <ScalarProperty Name="Complete" ColumnName="Complete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShowCompletes">
+            <EntityTypeMapping TypeName="ToDoModel.ShowComplete">
+              <MappingFragment StoreEntitySet="ShowComplete">
+                <ScalarProperty Name="TaskToDo" ColumnName="TaskToDo" />
+                <ScalarProperty Name="Complete" ColumnName="Complete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShowIncompletes">
+            <EntityTypeMapping TypeName="ToDoModel.ShowIncomplete">
+              <MappingFragment StoreEntitySet="ShowIncomplete">
+                <ScalarProperty Name="TaskToDo" ColumnName="TaskToDo" />
+                <ScalarProperty Name="Complete" ColumnName="Complete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="RemoveItem" FunctionName="ToDoModel.Store.RemoveItem" />
+          <FunctionImportMapping FunctionImportName="UpdateItem" FunctionName="ToDoModel.Store.UpdateItem" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
