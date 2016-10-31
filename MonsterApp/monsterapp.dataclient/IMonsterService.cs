@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
+using monsterapp.dataclient.Models;
+using monsterapp.dataclient.NewFolder1;
 
 namespace monsterapp.dataclient
 {
@@ -11,7 +14,15 @@ namespace monsterapp.dataclient
     [ServiceContract]
     public interface IMonsterService
     {
-        [OperationContract]
-        string DoWork();
+        //[OperationContract()]
+       // [OperationBehavior()]
+        [OperationContract()]
+        List<GenderDAO> GetGenders();
+
+        [OperationContract()]
+        List<TypeDAO> GetMonsterType();
+
+        [OperationContract()]
+        List<TitleDAO> GetTitles();
     }
 }
