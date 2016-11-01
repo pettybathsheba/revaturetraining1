@@ -12,10 +12,10 @@ namespace monsterapp.dataclient
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IMonsterService" in both code and config file together.
     [ServiceContract]
-    public interface IMonsterService
+        public interface IMonsterService
     {
         //[OperationContract()]
-       // [OperationBehavior()]
+       // [OperationBehavior()] 
         [OperationContract()]
         List<GenderDAO> GetGenders();
 
@@ -25,4 +25,6 @@ namespace monsterapp.dataclient
         [OperationContract()]
         List<TitleDAO> GetTitles();
     }
+
+
 }
