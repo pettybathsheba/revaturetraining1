@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterWeb.Client", "MonsterWeb.Client\MonsterWeb.Client.csproj", "{F57B67A8-0787-4041-9196-E73F9AA4D3A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterWeb.Logic", "MonsterWeb.Logic\MonsterWeb.Logic.csproj", "{05FADC81-48CC-4FE7-AC99-FC194BCD4D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F57B67A8-0787-4041-9196-E73F9AA4D3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F57B67A8-0787-4041-9196-E73F9AA4D3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F57B67A8-0787-4041-9196-E73F9AA4D3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F57B67A8-0787-4041-9196-E73F9AA4D3A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05FADC81-48CC-4FE7-AC99-FC194BCD4D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05FADC81-48CC-4FE7-AC99-FC194BCD4D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05FADC81-48CC-4FE7-AC99-FC194BCD4D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05FADC81-48CC-4FE7-AC99-FC194BCD4D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
