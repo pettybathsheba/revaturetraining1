@@ -7,7 +7,7 @@ namespace monsterapp.dataclient.Models
 {
     public class TypeDAO
     {
-        public int id { get; set; };
-        public int name { get; set; };
+        public int id { get; set; }
+        public int name { get; set; }
     }
 }

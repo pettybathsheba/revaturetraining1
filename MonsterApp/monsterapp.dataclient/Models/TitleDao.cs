@@ -7,7 +7,7 @@ namespace monsterapp.dataclient.NewFolder1
 {
     public class TitleDAO
     {
-        public int id { get; set; };
-        public int name { get; set; };
+        public int id { get; set; }
+        public int name { get; set; }
     }
 }

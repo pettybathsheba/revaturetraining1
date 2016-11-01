@@ -4,12 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace MonsterApp.DataAccess
 {
    public class EFData
     {
-        private MonsterDBEntities db = new MonsterDBEntities();
+        private MonsterDBEntities db = new MonsterDBEntities(); 
         public List<Gender> GetGenders()
         {
             return db.Genders.ToList();

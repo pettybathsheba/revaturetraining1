@@ -72,7 +72,6 @@
     <Compile Include="AdoDataInsertTest.cs" />
     <Compile Include="AdoDataMSTest.cs" />
     <Compile Include="AdoDataTest.cs" />
-    <Compile Include="EFdataTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

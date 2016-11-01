@@ -74,7 +74,6 @@
     <Compile Include="AdoData.cs" />
     <Compile Include="AdoDataInsert.cs" />
     <Compile Include="AdoDataUpdate.cs" />
-    <Compile Include="EFData.cs" />
     <Compile Include="Gender.cs">
       <DependentUpon>MonsterModel.tt</DependentUpon>
     </Compile>
