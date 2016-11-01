@@ -10,37 +10,30 @@ using MonsterApp.DataAccess;
 
 namespace monsterapp.dataclient
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "MonsterService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select MonsterService.svc or MonsterService.svc.cs at the Solution Explorer and start debugging.
     public class MonsterService : IMonsterService
     {
-       private AdoData data = new AdoData();
+        private AdoData data = new AdoData();
 
-       public List<GenderDAO> GetGenders()
+        public List<GenderDAO> GetGenders()
         {
             var g = new List<GenderDAO>();
+
+            foreach (var gender in data.GetGenders())
             {
-                foreach (var gender in data.GetGenders())
-                {
-                    g.Add(GenderMapper.MapToGenderDAO();
-                }
+                g.Add(GenderMapper.MapToGenderDAO(gender));
             }
+
             return g;
         }
-    
-       public List<TypeDAO> GetMonsterType()
-        {
-        throw new NotImplementedException();
-        }
 
-        List<TitleDAO> IMonsterService.GetTitles()
+        public List<TypeDAO> GetMonsterType()
         {
             throw new NotImplementedException();
         }
 
-        List<TitleDAO> GetTitles()
+        public List<TitleDAO> GetTitles()
         {
-        throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
     }
