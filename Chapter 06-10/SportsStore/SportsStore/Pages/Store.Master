@@ -10,8 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div id="header">
-            <SS:CartSummary ID="CartSummary1" runat="server" />
-            <div class="title">SPORTS STORE</div>
+            <SS:CartSummary ID="CartSummary1" runat="server" CssClass="auto-style1" />
+            <div class="title" style="text-align: left; background-color: #000099">Bathsheba&#39;s Sports Store</div>
         </div>
         <div id="categories">
             <SS:CatLinks ID="CatLinks1" runat="server" />

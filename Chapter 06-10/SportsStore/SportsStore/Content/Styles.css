@@ -4,7 +4,7 @@ DIV#header DIV.title, DIV.item H3, DIV.item H4, DIV.pager A {
 }
 DIV#header { background-color: #444; border-bottom: 2px solid #111; color: White; }
 DIV#header DIV.title { font-size: 2em; padding: .6em; }
-DIV#content { border-left: 2px solid gray; margin-left: 9em; padding: 1em; }
+DIV#content { border-left: 2px royal blue; margin-left: 9em; padding: 1em; }
 DIV#categories { float: left; width: 8em; padding: .3em; }
 
 DIV.item { border-top: 1px dotted gray; padding-top: .7em; margin-bottom: .7em; }

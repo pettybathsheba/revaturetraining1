@@ -7,9 +7,10 @@ AutoEventWireup="true" CodeBehind="Checkout.aspx.cs"
 
     <div id="checkoutForm" class="checkout" runat="server">
         <h2>Checkout Now</h2>    
-        Please enter your details, and we'll ship your goods right away!
-
-        <div id="errors"  data-valmsg-summary="true">
+        <dl>
+            <dt>Please enter your details, and we'll ship your goods right away!</dt>
+        </dl>
+&nbsp;<div id="errors"  data-valmsg-summary="true">
             <ul><li style="display:none"></li></ul>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server"/>
         </div>
